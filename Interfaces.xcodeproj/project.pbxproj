@@ -11,7 +11,7 @@
 		27E76F1E1F9B58D6006BD337 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E76F1D1F9B58D6006BD337 /* Module.swift */; };
 		27E76F201F9B5961006BD337 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E76F1F1F9B5961006BD337 /* Router.swift */; };
 		27E76F221F9B5A0C006BD337 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E76F211F9B5A0C006BD337 /* Network.swift */; };
-		27E76F241F9B5B0D006BD337 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E76F231F9B5B0D006BD337 /* User.swift */; };
+		27E76F241F9B5B0D006BD337 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E76F231F9B5B0D006BD337 /* UserAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		27E76F1D1F9B58D6006BD337 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		27E76F1F1F9B5961006BD337 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		27E76F211F9B5A0C006BD337 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		27E76F231F9B5B0D006BD337 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		27E76F231F9B5B0D006BD337 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 				27E76F1D1F9B58D6006BD337 /* Module.swift */,
 				27E76F1F1F9B5961006BD337 /* Router.swift */,
 				27E76F211F9B5A0C006BD337 /* Network.swift */,
-				27E76F231F9B5B0D006BD337 /* User.swift */,
+				27E76F231F9B5B0D006BD337 /* UserAuth.swift */,
 				27E76F161F9B58B1006BD337 /* Info.plist */,
 			);
 			path = Interfaces;
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27E76F241F9B5B0D006BD337 /* User.swift in Sources */,
+				27E76F241F9B5B0D006BD337 /* UserAuth.swift in Sources */,
 				27E76F201F9B5961006BD337 /* Router.swift in Sources */,
 				27E76F1E1F9B58D6006BD337 /* Module.swift in Sources */,
 				27E76F221F9B5A0C006BD337 /* Network.swift in Sources */,

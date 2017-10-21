@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserAuth.swift
 //  Interfaces
 //
 //  Created by 王航 on 2017/10/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol User:AnyObject {
+@objc public protocol UserAuth:AnyObject {
     @objc var uid:String?{get}
     @objc var token:String?{get}
 }
