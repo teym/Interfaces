@@ -16,11 +16,15 @@ import Foundation
     @discardableResult
     func progress(block:@escaping (Int64,Int64)->Void) -> Task
 }
-
+@objc public enum ReachabilityType:Int{
+    case notReachable
+    case reachableWiFi
+    case reachableWWAN
+}
 @objc public protocol Network:AnyObject {
     typealias URLMap = (String,String)->String
     @objc var requestMap:URLMap?{get set}
-    @objc var reachable:Bool {get}
+    @objc var reachability:ReachabilityType {get}
     func request(url:String, method:String, parameters:[String:Any], headers:[String:String]) -> Task
     func upload(url:String,files:[String:AnyObject], headers:[String:String], handle:@escaping (Task?, Error?)->Void)
 }
