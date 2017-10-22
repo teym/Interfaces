@@ -25,6 +25,6 @@ import Foundation
     typealias URLMap = (String,String)->String
     @objc var requestMap:URLMap?{get set}
     @objc var reachability:ReachabilityType {get}
-    func request(url:String, method:String, parameters:[String:Any], headers:[String:String]) -> Task
-    func upload(url:String,files:[String:AnyObject], headers:[String:String], handle:@escaping (Task?, Error?)->Void)
+    func request(url:String, method:String, parameters:[String:Any]?, headers:[String:String]?) -> Task
+    func upload(url:String,files:[String:AnyObject], headers:[String:String]?, handle:@escaping (Task?, Error?)->Void)
 }
