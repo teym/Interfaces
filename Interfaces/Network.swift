@@ -10,9 +10,9 @@ import Foundation
 
 @objc public protocol Task:AnyObject {
     @discardableResult
-    func response(success:@escaping (Data)->Void, failure:@escaping (Error?)->Void) -> Task
+    func response(success:@escaping (Data,HTTPURLResponse?)->Void, failure:@escaping (Error?,HTTPURLResponse?)->Void) -> Task
     @discardableResult
-    func responseJSON(success:@escaping (Any)->Void, failure:@escaping (Error?)->Void) -> Task
+    func responseJSON(success:@escaping (Any,HTTPURLResponse?)->Void, failure:@escaping (Error?,HTTPURLResponse?)->Void) -> Task
     @discardableResult
     func progress(block:@escaping (Int64,Int64)->Void) -> Task
 }
