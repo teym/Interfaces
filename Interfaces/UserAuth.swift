@@ -9,6 +9,9 @@
 import Foundation
 
 @objc public protocol UserAuth:AnyObject {
+    @objc var pid:String?{get}
     @objc var uid:String?{get}
     @objc var token:String?{get}
+    @objc func refresh();
+    @objc func invalidate();
 }
