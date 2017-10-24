@@ -8,23 +8,34 @@
 
 import Foundation
 
-@objc public protocol Task:AnyObject {
-    @discardableResult
-    func response(success:@escaping (Data,HTTPURLResponse?)->Void, failure:@escaping (Error?,HTTPURLResponse?)->Void) -> Task
-    @discardableResult
-    func responseJSON(success:@escaping (Any,HTTPURLResponse?)->Void, failure:@escaping (Error?,HTTPURLResponse?)->Void) -> Task
-    @discardableResult
-    func progress(block:@escaping (Int64,Int64)->Void) -> Task
+@objc public protocol NetworkResponse:AnyObject {
+    var headers: [String : String]?{get}
+    var mimeType: String?{get}
+    var data: Data{get}
+    var statusCode: Int{get}
+    var URL: URL?{get}
+    var error: Error?{get}
 }
+
+@objc public protocol NetworkTask:AnyObject {
+    @discardableResult
+    func response(success:@escaping (Data,NetworkResponse)->Void, failure:@escaping (Error?,NetworkResponse?)->Void) -> NetworkTask
+    @discardableResult
+    func responseJSON(success:@escaping (Any,NetworkResponse)->Void, failure:@escaping (Error?,NetworkResponse?)->Void) -> NetworkTask
+    @discardableResult
+    func progress(block:@escaping (Float)->Void) -> NetworkTask
+}
+
 @objc public enum ReachabilityType:Int{
     case notReachable
     case reachableWiFi
     case reachableWWAN
 }
+
 @objc public protocol Network:AnyObject {
     typealias URLMap = (String,String)->String
     @objc var requestMap:URLMap?{get set}
     @objc var reachability:ReachabilityType {get}
-    func request(url:String, method:String, parameters:[String:Any]?, headers:[String:String]?) -> Task
-    func upload(url:String,files:[String:AnyObject], headers:[String:String]?, handle:@escaping (Task?, Error?)->Void)
+    func request(url:String, method:String, parameters:[String:Any]?, headers:[String:String]?) -> NetworkTask
+    func upload(url:String,files:[String:AnyObject], headers:[String:String]?) -> NetworkTask
 }
