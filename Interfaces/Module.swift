@@ -14,7 +14,7 @@ public enum ModuleInjectError: Error {
 }
 
 @objc public protocol ModuleInject:AnyObject {
-    @objc func instance(interface:AnyObject) throws ->AnyObject
+    func instance(interface:AnyObject) throws ->AnyObject
 }
 
 public class ModuleInjectT {
@@ -31,7 +31,7 @@ public class ModuleInjectT {
 }
 
 @objc public protocol Module:AnyObject {
-    @objc static func interfaces()->[AnyObject]
-    @objc static func loadOnStart()->Bool
-    @objc init(inject:ModuleInject)
+    static func interfaces()->[AnyObject]
+    static func loadOnStart()->Bool
+    init(inject:ModuleInject)
 }
