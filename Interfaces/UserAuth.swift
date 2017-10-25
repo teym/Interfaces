@@ -14,6 +14,6 @@ import Foundation
     @objc var token:String?{get}
     func refresh();
     func invalidate();
-    func login(name:String,pass:String,handle:(String?,Error?)->Void)
-    func anonymous(type:String,token:[String:Any],handle:(String?,Error?)->Void)
+    func login(name:String,pass:String,handle:@escaping(String?,Error?)->Void)
+    func anonymous(type:String,token:[String:Any],handle:@escaping(String?,Error?)->Void)
 }
