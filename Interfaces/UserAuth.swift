@@ -9,9 +9,11 @@
 import Foundation
 
 @objc public protocol UserAuth:AnyObject {
-    @objc var pid:String?{get}
-    @objc var uid:String?{get}
+    var pid:String?{get}
+    var uid:String?{get}
     @objc var token:String?{get}
-    @objc func refresh();
-    @objc func invalidate();
+    func refresh();
+    func invalidate();
+    func login(name:String,pass:String,handle:(String?,Error?)->Void)
+    func anonymous(type:String,token:[String:Any],handle:(String?,Error?)->Void)
 }
