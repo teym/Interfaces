@@ -9,7 +9,7 @@
 import Foundation
 
 @objc public protocol UserAuth:AnyObject {
-    var pid:String?{get}
+    var pid:String{get}
     var uid:String?{get}
     @objc var token:String?{get}
     func refresh();

@@ -16,4 +16,6 @@ import UIKit
     func addRouter(path:String,comptent:@escaping (String,[String:String])->UIViewController?)
     func addDefaultRouter(comptent:@escaping (String,[String:String])->UIViewController?)
     func addSubRouter(path:String, comptent:@escaping (String,[String:String])->Void) -> Router
+    
+    func addMiddleware(middleware:(String,[String:String],UIViewController?,()->Void)->Void)
 }
