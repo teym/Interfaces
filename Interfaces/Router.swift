@@ -9,6 +9,8 @@
 import UIKit
 
 @objc public protocol Router: AnyObject {
+    typealias RootMiddleware = (String, [String : String], UIViewController?, () -> Void) -> Void
+
     func push(path:String)
     func replace(path:String)
     func pop()
@@ -17,5 +19,5 @@ import UIKit
     func addDefaultRouter(comptent:@escaping (String,[String:String])->UIViewController?)
     func addSubRouter(path:String, comptent:@escaping (String,[String:String])->Void) -> Router
     
-    func addMiddleware(middleware:(String,[String:String],UIViewController?,()->Void)->Void)
+    func addMiddleware(middleware:@escaping RootMiddleware)
 }
