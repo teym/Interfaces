@@ -8,8 +8,13 @@
 
 import UIKit
 
+@objc public enum RouteType:Int{
+    case push
+    case replase
+}
+
 @objc public protocol Router: AnyObject {
-    typealias RootMiddleware = (String, [String : String], UIViewController?, () -> Void) -> Void
+    typealias RootMiddleware = (RouteType, [String : String], UIViewController?, () -> Void) -> Void
 
     func push(path:String)
     func replace(path:String)
