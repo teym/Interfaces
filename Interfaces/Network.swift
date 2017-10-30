@@ -37,5 +37,5 @@ import Foundation
     var requestMap:URLMap?{get set}
     var reachability:ReachabilityType {get}
     func request(url:String, method:String, parameters:Any?, headers:[String:String]?) -> NetworkTask
-    func upload(url:String,files:[String:AnyObject], headers:[String:String]?) -> NetworkTask
+    func upload(url:String,files:[String:Any], headers:[String:String]?) -> NetworkTask
 }

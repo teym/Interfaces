@@ -17,7 +17,9 @@ import UIKit
     typealias Middleware = (RouteType, [String : String], UIViewController?, () -> Void) -> Void
 
     func push(path:String)
+    func push(path:String, parameters:[String:Any])
     func replace(path:String)
+    func replace(path:String, parameters:[String:Any])
     func pop()
     
     func addRouter(path:String,comptent:@escaping (String,[String:String])->UIViewController?)
