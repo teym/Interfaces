@@ -14,7 +14,7 @@ import UIKit
 }
 
 @objc public protocol Router: AnyObject {
-    typealias Middleware = (RouteType, [String : String], UIViewController?, () -> Void) -> Void
+    typealias Middleware = (RouteType, [String : Any], UIViewController?, () -> Void) -> Void
 
     func push(path:String)
     func push(path:String, parameters:[String:Any], pass:[String:Any])
